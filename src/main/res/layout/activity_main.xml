@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Main Screen Layout (ShelfWise)
+
+    Purpose:
+      - Provides the primary navigation UI for the app.
+      - Displays:
+          * A top app bar with hamburger menu
+          * A ribbon of storage tabs (Fridge, Freezer, Cupboard)
+          * A ViewPager2 for fragment-based navigation
+          * A floating action button for adding new items
+
+    Architectural Role:
+      - Pure UI layout; contains no logic.
+      - Used by MainActivity.
+      - Works with:
+          * StoragePagerAdapter (fragment management)
+          * StorageFragment (per-tab item lists)
+          * ExpiryService (urgency logic)
+          * AppContainer (dependency injection)
+
+    UX Notes:
+      - CoordinatorLayout + AppBarLayout enable proper scrolling behaviour.
+      - TabLayout + ViewPager2 provide smooth horizontal navigation.
+      - FAB is positioned bottom-right for quick item creation.
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <!-- TOP APP BAR WITH HAMBURGER MENU -->
+    <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/mainToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="ShelfWise"
+                android:background="@color/green_main"
+                app:titleCentered="true"
+                app:titleTextColor="@android:color/white"
+                app:navigationIcon="@drawable/ic_menu"
+                app:navigationIconTint="@android:color/white" />
+
+        <!-- STORAGE TABS RIBBON -->
+        <com.google.android.material.tabs.TabLayout
+                android:id="@+id/storageTabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/green_light"
+                app:tabIndicatorColor="@color/green_dark"
+                app:tabSelectedTextColor="@android:color/white"
+                app:tabTextColor="@android:color/white"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- MAIN CONTENT AREA (FRAGMENTS) -->
+    <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <!-- ADD ITEM BUTTON -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addItemButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_add"
+            android:contentDescription="@string/add_item"
+            app:backgroundTint="@color/green_light"
+            app:tint="@android:color/white" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

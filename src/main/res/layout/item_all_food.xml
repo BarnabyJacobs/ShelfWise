@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    All Items Row Layout
+
+    Purpose:
+      - Defines how a single food item is displayed in the All Items screen.
+      - Used by AllItemsAdapter inside AllItemsActivity.
+
+    Architectural Role:
+      - Pure UI layout; contains no logic.
+      - Works with:
+          * AllItemsAdapter (binding data)
+          * ExpiryService (urgency calculation)
+          * UrgencyColourMapper (colour coding)
+      - Part of the All Items list, separate from storage‑specific lists.
+
+    UX Notes:
+      - Two‑line layout:
+          * Line 1: Item name (bold, larger)
+          * Line 2: Details (expiry date, quantity, area)
+      - Padding ensures comfortable touch targets.
+-->
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <!-- Item name -->
+    <TextView
+            android:id="@+id/allItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    <!-- Item details (expiry, quantity, area) -->
+    <TextView
+            android:id="@+id/allItemDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp" />
+
+</LinearLayout>

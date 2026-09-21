@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:background="@android:color/white">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="80dp">
+
+        <!-- Screen title -->
+        <TextView
+                android:id="@+id/screenTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit Item"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+        <!-- Item name -->
+        <EditText
+                android:id="@+id/inputItemName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Item name"
+                android:inputType="text"
+                android:layout_marginBottom="12dp"/>
+
+        <!-- Expiry date -->
+        <EditText
+                android:id="@+id/inputExpiryDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Expiry date"
+                android:focusable="false"
+                android:clickable="true"
+                android:layout_marginBottom="12dp"/>
+
+        <!-- Use-by type spinner -->
+        <Spinner
+                android:id="@+id/inputUseByType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"/>
+
+        <!-- Quantity -->
+        <EditText
+                android:id="@+id/inputQuantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Quantity"
+                android:inputType="number"
+                android:layout_marginBottom="12dp"/>
+
+        <!-- Price -->
+        <EditText
+                android:id="@+id/inputItemPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Price"
+                android:inputType="numberDecimal"
+                android:layout_marginBottom="12dp"/>
+
+        <!-- 🔹 Amount Remaining Slider -->
+        <TextView
+                android:id="@+id/labelRemaining"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount Remaining (%)"
+                android:textSize="16sp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="4dp"/>
+
+        <SeekBar
+                android:id="@+id/remainingSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="100"
+                android:layout_marginBottom="4dp"/>
+
+        <TextView
+                android:id="@+id/remainingValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100%"
+                android:textSize="14sp"
+                android:layout_marginBottom="16dp"/>
+
+        <!-- Notes -->
+        <EditText
+                android:id="@+id/inputNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Notes (optional)"
+                android:inputType="textMultiLine"
+                android:minLines="2"
+                android:layout_marginBottom="16dp"/>
+
+        <!-- Save button -->
+        <Button
+                android:id="@+id/saveItemButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save"/>
+
+        <!-- Cancel button -->
+        <Button
+                android:id="@+id/cancelItemButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:layout_marginTop="12dp"/>
+
+    </LinearLayout>
+</ScrollView>

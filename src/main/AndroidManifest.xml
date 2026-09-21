@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+            android:name=".MyApplication"
+            android:icon="@drawable/shelfwise_logo_transparent"
+            android:allowBackup="true"
+            android:label="@string/app_name"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.MyTestApplication">
+
+        <activity
+                android:name=".UI.EditItemActivity"
+                android:exported="false" />
+
+        <activity android:name=".UI.SettingsActivity" />
+
+        <activity
+                android:name=".UI.AddItemActivity"
+                android:exported="false"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+                tools:ignore="MissingClass"/>
+
+        <activity
+                android:name=".UI.AllItemsActivity"
+                android:exported="false" />
+
+        <activity
+                android:name=".UI.StorageAreaActivity"
+                android:exported="false"
+                android:theme="@style/Theme.MyTestApplication" />
+
+        <activity
+                android:name=".UI.MainActivity"
+                android:exported="false" />
+
+        <activity
+                android:name=".UI.LoginActivity"
+                android:exported="true" />
+
+        <activity
+                android:name=".UI.RegisterActivity"
+                android:exported="false" />
+
+        <receiver
+                android:name=".UI.ShelfWiseWidget"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                    android:name="android.appwidget.provider"
+                    android:resource="@xml/shelfwisewidget_info" />
+        </receiver>
+
+        <activity android:name=".UI.DeleteItemActivity" />
+
+        <activity
+                android:name=".UI.SplashActivity"
+                android:exported="true"
+                android:theme="@style/Theme.MyApp.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+
+</manifest>

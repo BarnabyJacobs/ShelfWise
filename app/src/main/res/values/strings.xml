@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Test Application</string>
+    <string name="user_name">User Name</string>
+    <string name="submit">Submit</string>
+    <string name="password">Password</string>
+    <string name="title_activity_register_test">RegisterActivityTest</string>
+</resources>

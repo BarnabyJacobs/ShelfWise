@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- Example: button style -->
+    <style name="MyButtonStyle">
+        <item name="android:padding">12dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- Example: text style -->
+    <style name="MyHeadingText">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Theme.MyApp.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/shelfwiselogo</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+        <item name="postSplashScreenTheme">@style/Theme.MyTestApplication</item>
+    </style>
+
+
+</resources>
+
+

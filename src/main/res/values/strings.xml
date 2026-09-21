@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">ShelfWise</string>
+    <string name="food_inventory">Food Inventory</string>
+    <string name="FoodInventory">Food Inventory</string>
+    <string name="username">Username</string>
+    <string name="Username">Username</string>
+    <string name="usernameInput">usernameInput</string>
+    <string name="editUsername">Enter Username</string>
+    <string name="password">Password</string>
+    <string name="editPassword">editPassword</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="foodinventory">Food Inventory</string>
+    <string name="Password"/>
+    <string name="sign_in">Sign In</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="confirm_password">confirm_password</string>
+    <string name="Register">Register</string>
+    <string name="Confirm_Password">Confirm Password</string>
+    <string name="fridge_freezer">Fridge Freezer</string>
+    <string name="cupboard">Cupboard</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="quantity">Quantity</string>
+    <string name="expiry_date">Expiry date</string>
+    <string name="price">Price (£)</string>
+    <string name="notes_optional">Notes (optional)</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="remove">Remove</string>
+    <string name="item_name">Item name</string>
+    <string name="area">Area</string>
+    <string name="add_item">Add Item</string>
+    <string name="shelfwise_logo">ShelfWise Logo</string>
+    <string name="fridge">Fridge</string>
+    <string name="freezer">Freezer</string>
+    <string name="shelfwise">ShelfWise</string>
+    <string name="shelfwise1">ShelfWise</string>
+    <string name="delete_item">delete_item</string>
+    <string name="ShelfWise">ShelfWise</string>
+
+    <string-array name="remove_reasons">
+        <item>No reason</item>
+        <item>Consumed</item>
+        <item>Thrown away</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Delete Item Screen Layout
+
+    Purpose:
+      - Dedicated screen for confirming deletion of a food item.
+      - Replaces the older inline delete UI inside EditItemActivity.
+      - Provides a clearer, safer, more intentional delete flow.
+
+    Architectural Role:
+      - Pure UI layout; contains no logic.
+      - Used by DeleteItemActivity.
+      - Supports the new architecture where deletion is a separate, explicit action.
+
+    UX Notes:
+      - Large top padding pushes content downward for a modal‑like feel.
+      - Red accents reinforce destructive action.
+      - Summary text helps prevent accidental deletion.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:padding="24dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="top|start"
+            android:paddingTop="160dp"> <!-- Pushes content downward for visual clarity -->
+
+        <!-- Header section -->
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:layout_marginBottom="20dp">
+
+            <ImageView
+                    android:id="@+id/deleteIcon"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/delete_icon"
+                    app:tint="@android:color/holo_red_dark"
+                    android:layout_marginEnd="8dp" />
+
+            <TextView
+                    android:id="@+id/deleteTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delete item"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <!-- Reason label -->
+        <TextView
+                android:id="@+id/deleteReasonLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reason"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="8dp" />
+
+        <!-- Reason dropdown -->
+        <Spinner
+                android:id="@+id/deleteReasonSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp" />
+
+        <!-- Item summary (set dynamically) -->
+        <TextView
+                android:id="@+id/deleteItemSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="40dp" />
+
+        <!-- Action buttons -->
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|start"
+                android:baselineAligned="false">
+
+            <Button
+                    android:id="@+id/cancelButton"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Cancel"
+                    android:backgroundTint="#7B1FA2"
+                    android:textColor="@android:color/white"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_gravity="center_vertical" />
+
+            <Button
+                    android:id="@+id/deleteButton"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Delete"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@android:color/holo_red_dark"
+                    android:layout_gravity="center_vertical" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

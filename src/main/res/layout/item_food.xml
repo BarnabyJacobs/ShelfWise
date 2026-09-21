@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Storage Item Row Layout
+
+    Purpose:
+      - Defines how a single food item is displayed inside a storage area list.
+      - Used by FoodItemAdapter within StorageFragment.
+
+    Architectural Role:
+      - Pure UI layout; contains no logic.
+      - Works with:
+          * FoodItemAdapter (binding data)
+          * ExpiryService (urgency calculation)
+          * UrgencyColourMapper (background colour coding)
+          * RemainingPercent (visual consumption indicator)
+      - Part of the ViewPager2 tabbed navigation system.
+
+    UX Notes:
+      - Four-line layout:
+          * Line 1: Item name (bold)
+          * Line 2: Expiry date (grey)
+          * Line 3: Details (quantity, price, notes)
+          * Line 4: Remaining percentage bar + label
+      - Delete icon positioned on the right for quick access.
+      - Entire row uses selectableItemBackground for ripple feedback.
+-->
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="72dp"
+        android:background="?android:attr/selectableItemBackground">
+
+        <!-- Main content block -->
+        <LinearLayout
+                android:id="@+id/itemContent"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@id/itemDeleteIcon"
+                android:layout_marginEnd="16dp">
+
+                <!-- Item name -->
+                <TextView
+                        android:id="@+id/itemName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black" />
+
+                <!-- Expiry date -->
+                <TextView
+                        android:id="@+id/itemExpiry"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/darker_gray" />
+
+                <!-- Additional details (quantity, price, notes) -->
+                <TextView
+                        android:id="@+id/itemDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_marginBottom="6dp" />
+
+                <!-- 🔹 Remaining percentage bar -->
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <ProgressBar
+                                android:id="@+id/itemRemainingProgress"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="0dp"
+                                android:layout_height="8dp"
+                                android:layout_weight="1"
+                                android:max="100"
+                                android:progress="100"
+                                android:progressTint="@color/green_light"
+                                android:layout_marginEnd="8dp" />
+
+                        <TextView
+                                android:id="@+id/itemRemainingLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100%"
+                                android:textSize="12sp"
+                                android:textColor="@android:color/black" />
+                </LinearLayout>
+        </LinearLayout>
+
+        <!-- Delete icon -->
+        <ImageView
+                android:id="@+id/itemDeleteIcon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/delete_icon"
+                android:contentDescription="Delete item" />
+
+</RelativeLayout>

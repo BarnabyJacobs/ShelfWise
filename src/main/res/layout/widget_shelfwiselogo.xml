@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ShelfWise Home‑Screen Widget Layout
+
+    Purpose:
+      - Defines the UI for the ShelfWise home‑screen widget.
+      - Displays only the ShelfWise logo for a clean, recognisable presence.
+      - Used by ShelfWiseWidget (AppWidgetProvider).
+
+    Architectural Role:
+      - Pure UI layout; contains no logic.
+      - Works with:
+          * ShelfWiseWidget (updates + click handling)
+          * AppWidgetManager (system integration)
+      - Lightweight by design to ensure fast rendering on the home screen.
+
+    UX Notes:
+      - Centred logo ensures visual balance on all screen sizes.
+      - Padding prevents the widget from feeling cramped.
+      - Uses a FrameLayout‑safe background (selectableItemBackground) for subtle touch feedback.
+-->
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+    <!-- ShelfWise Logo -->
+    <ImageView
+            android:id="@+id/widgetLogo"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/shelfwiselogo"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/shelfwise_logo" />
+</LinearLayout>

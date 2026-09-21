@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "128524468865",
+    "project_id": "shelfwise-9c8f5",
+    "storage_bucket": "shelfwise-9c8f5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128524468865:android:963fa71f57aff0f6130380",
+        "android_client_info": {
+          "package_name": "com.example.householdfoodinventory"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6k00Re4DFrA9m304yonXlJybTwIKutv0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

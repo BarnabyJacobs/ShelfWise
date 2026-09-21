@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Splash Screen Layout (ShelfWise)
+
+    Purpose:
+      - Displays the ShelfWise logo during app startup.
+      - Used by SplashActivity.
+      - Provides a clean, centred visual identity before navigating to LoginActivity.
+
+    Architectural Role:
+      - Pure UI layout; contains no logic.
+      - SplashActivity handles:
+          * Timed delay
+          * Fade‑in animation (optional)
+          * Navigation to LoginActivity
+      - Keeps branding separate from functional screens.
+
+    UX Notes:
+      - ConstraintLayout ensures perfect centring on all screen sizes.
+      - Large logo reinforces brand identity.
+      - No text is shown here; the logo alone is the brand.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp"
+        tools:context=".UI.SplashActivity">
+
+    <!-- ShelfWise Logo (centred) -->
+    <ImageView
+            android:id="@+id/shelfwise_logo"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/shelfwise_logo"
+            android:scaleX="1"
+            android:scaleY="1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

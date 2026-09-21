@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    StorageFragment Layout
+
+    Purpose:
+      - Displays the list of food items for a single storage area (Fridge, Freezer, Cupboard).
+      - Used by StorageFragment, which is created by StoragePagerAdapter inside MainActivity.
+
+    Architectural Role:
+      - Pure UI layout; contains no logic.
+      - Works with:
+          * FoodItemAdapter (RecyclerView rendering)
+          * ExpiryService (urgency calculation)
+          * StorageFragment (data loading + click handling)
+      - Part of the ViewPager2 tabbed navigation system.
+
+    UX Notes:
+      - RecyclerView fills the entire fragment.
+      - PaddingBottom ensures the FAB in MainActivity does not overlap list items.
+-->
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+    <!-- RecyclerView for displaying items in this storage area -->
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/storageRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="72dp"
+            android:scrollbars="vertical" />
+
+</LinearLayout>
